@@ -187,11 +187,11 @@
   }
 
   // --- Titres : sections et sous-sections ---
-  show heading.where(level: 2): it => block(above: 14pt, below: 4pt,
+  show heading.where(level: 2): it => block(above: 18pt, below: 14pt,
     text(size: 16pt, weight: "bold", fill: UdesReussiteContraste2, it))
-  show heading.where(level: 3): it => block(above: 10pt, below: 4pt,
+  show heading.where(level: 3): it => block(above: 18pt, below: 14pt,
     text(size: 14pt, weight: "bold", fill: UdesReussiteContraste2, it))
-  show heading.where(level: 4): it => block(above: 10pt, below: 4pt,
+  show heading.where(level: 4): it => block(above: 18pt, below: 14pt,
     text(size: 12pt, weight: "bold", fill: UdesReussiteContraste2, it))
 
   // --- Table des matières : niveau 1 en gras, sans points de conduite ---
