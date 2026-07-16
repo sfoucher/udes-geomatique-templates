@@ -1,0 +1,99 @@
+\thispagestyle{empty}
+\begin{titlepage}
+\vspace*{-3cm}   % ← annule l'espace automatique de titlepage
+
+% true = utiliser la palette UdesFierte et le logo à côté
+% false = utiliser une couleur foncée et le logo dans le bandeau
+\newif\ifbolBandeau
+\bolBandeaufalse   % <-- mettre \bolBandeautrue ou bolBandeaufalse pour choisir une option
+\ifbolBandeau
+    % ============================================================
+    % OPTION 1 : UdesFierte pour le bandeau avec logo à coté
+    % ============================================================
+    % Bandeau vert sur toute la hauteur gauche
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[UdesFierte]
+            (current page.north west) rectangle
+            ([xshift=2.5cm]current page.south west);
+        \node[
+            anchor=south west,
+            rotate=90,
+            text=white,
+            align=left
+        ] at ([yshift=2.0cm, xshift=2.0cm]current page.south west)
+            {\fontfamily{phv}\bfseries\fontsize{20pt}{15pt}\selectfont MÉMOIRE DE MAÎTRISE\\[0.1cm]
+             \fontfamily{phv}\bfseries\fontsize{15pt}{14pt}\selectfont Géomatique appliquée et télédétection};
+    \end{tikzpicture}
+    % Bloc en haut à gauche (Logo, Faculté, Département)
+    \begin{flushleft}
+        \hspace*{.5cm}
+        \begin{minipage}{0.8\linewidth}
+            \includegraphics[width=0.4\linewidth]{logoUdes/UdeS_logo_h_rgbHR.png}
+        \end{minipage}
+    \end{flushleft}
+    \vspace{2.5cm}
+\else
+    % =================================================================
+    % OPTION 2 : Couleur foncée pour le bandeau et logo dans le bandeau
+    % =================================================================
+    % Bandeau vert sur toute la hauteur gauche
+    \begin{tikzpicture}[remember picture, overlay]
+       %\fill[UdesReussiteContraste2]   % UdesReussiteContraste2 (ratio 10,63)
+       \fill[UdesReussiteContraste1]  % UdesReussiteContraste2 (ratio 8,22)
+       %\fill[UdesReussite]            % UdesReussite          (ratio 6,01)
+       %\fill[UdesBienEtre]            % UdesBienEtre          (ratio 4,91)
+       %\fill[UdesFierteAccessible]    % UdesFierteAccessible  (ratio 4,55)
+            (current page.north west) rectangle
+            ([xshift=2.5cm]current page.south west);
+        \node[
+            anchor=north west
+        ] at ([xshift=-0.35cm, yshift=-.7cm]current page.north west)
+            {\includegraphics[width=2.8cm]{logoUdes/UdeS_logo_v_blancHR.png}};
+        \node[
+            anchor=south west,
+            rotate=90,
+            text=white,
+            align=left
+        ] at ([yshift=2.0cm, xshift=2.0cm]current page.south west)
+            {\fontfamily{phv}\bfseries\fontsize{20pt}{15pt}\selectfont THÈSE DE DOCTORAT\\[0.1cm]
+             \fontfamily{phv}\bfseries\fontsize{15pt}{14pt}\selectfont Télédétection};
+    \end{tikzpicture}
+    \vspace{2.5cm}
+\fi
+    
+    % ========================================================
+    % Bloc à droite (Titres, Auteur.trice, Mentions)
+    % ========================================================
+    \begin{flushright}
+        % Titres du document
+        \begin{spacing}{2}
+        \textcolor{UdesReussite}{%
+            {\fontsize{22pt}{20pt}\selectfont \textbf{Titre dans la langue de rédaction}}\\
+            {\fontsize{22pt}{20pt}\selectfont \textbf{(français ou anglais)}}}\\[0.5cm]
+        \end{spacing}
+
+        {\fontsize{16pt}{20pt}\selectfont \textcolor{UdesReussiteContraste2}{Titre en français, si la langue de rédaction est l'anglais}}\\[2.5cm]
+        
+        % Auteur.trice
+        {\fontsize{22pt}{18pt}\selectfont \textbf{\textcolor{UdesReussite}{\textsc{Prénom} NOM}}}\\[1.5cm]
+
+        % Mention du diplôme
+        \vspace{0.5cm}
+        {\fontsize{12pt}{15pt}\selectfont \textcolor{UdesReussiteContraste1}
+        {Thèse présentée à la Faculté des lettres et sciences humaines \\
+        au Département de géomatique appliquée \\
+        en vue de l’obtention du grade de}}\\[0.4cm]
+        {\fontsize{12pt}{15pt}\selectfont \textcolor{UdesReussiteContraste1}
+        {\textit{Philosophiae Doctor} (Ph. D.) en télédétection}}\\[2.5cm]
+
+        % Date
+        {\fontsize{12pt}{15pt}\selectfont \textcolor{UdesReussiteContraste1}{Mois 20XX}}\\
+        % Ce ressort repousse le copyright tout en bas de la page
+        \vfill
+        % Droits d'auteur
+        {\fontsize{12pt}{15pt}\selectfont \textcolor{UdesReussiteContraste1}{\copyright~\textsc{Prénom} NOM, 20XX}}\vspace*{-1cm}
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage

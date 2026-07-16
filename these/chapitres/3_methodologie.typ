@@ -1,0 +1,160 @@
+#import "../../udes-thesis.typ": *
+
+= Méthodologie <chap:metho>
+
+Paragraphe. #lorem(100)
+
+== Titre de niveau 1 <sec:metho-1>
+
+#lorem(110)
+
+#lorem(90)
+
+== Titre de niveau 1 <sec:metho-2>
+
+=== Titre de niveau 2 <subsec:metho-2-1>
+
+#lorem(90)
+
+=== Titre de niveau 2 <subsec:metho-2-2>
+
+#lorem(90)
+
+== Titre de niveau 1 <sec:metho-3>
+
+#lorem(90)
+
+== Titre de niveau 1 <sec:metho-4>
+
+=== Titre de niveau 2 <subsec:metho-4-1>
+
+#lorem(90)
+
+=== Titre de niveau 2 <subsec:metho-4-2>
+
+#lorem(90)
+
+==== Titre de niveau 3 <subsec:metho-4-2-1>
+
+#lorem(80)
+
+==== Titre de niveau 3 <subsec:metho-4-2-2>
+
+#lorem(80)
+
+=== Titre de niveau 2 <subsec:metho-4-3>
+
+Comment numéroter et faire référence à une équation ? Les mesures du RMSE et de $R^2$ (équations~@eq:rmse et~@eq:r2) sont utilisées...
+
+$ "RMSE" = sqrt(frac(sum_(i=1)^n (y_i - hat(y)_i)^2, n)) $ <eq:rmse>
+
+$ R^2 = frac(sum_(i=1)^n (hat(y)_i - overline(y))^2, sum_(i=1)^n (y_i - overline(y))^2) $ <eq:r2>
+
+L'équation de la régression linéaire multiple s'écrit :
+
+$ Y = X beta + epsilon quad "avec :" $ <eq:regression_lineaire>
+
+- $Y$ est un vecteur de dimension $n times 1$ pour la variable dépendante, soit une colonne avec $n$ observations.
+- $X$ est une matrice de dimension $n times (k+1)$ pour les $k$ variables indépendantes, incluant une autre colonne pour la constante.
+- $beta$ est un vecteur de dimension $k+1$, soit les coefficients de régression pour les $k$ variables et la constante.
+- $epsilon$ est un vecteur de dimension $n times 1$ pour les résidus.
+
+L'analyse des résultats du modèle est présentée dans le tableau @tab:tableau1.
+
+#figure(
+  caption: [Premier tableau du chapitre 3],
+  {
+    table(
+      columns: (auto, auto, auto, auto),
+      align: (left, center, center, center),
+      inset: (x: 8pt, y: 5pt),
+      table.hline(),
+      [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
+      table.hline(),
+      ..(([Texte],) * 20),
+      table.hline(),
+    )
+    align(left, text(size: 9pt)[_Note :_ facultatif.])
+  },
+) <tab:tableau1>
+
+Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
+
+#figure(
+  box(width: 100%, align(center, image("../figures/kernels.png", width: 80%))),
+  caption: [Fonctions noyaux (kernel) pour définir la matrice de pondération W(i)],
+) <fig:kernels>
+
+#pagebreak()
+
+En théorie des graphes, l'algorithme de Dijkstra résout le problème du plus court chemin (algorithme @algo:dijkstra).
+
+#algorithme([Algorithme de Dijkstra], pseudocode-list(booktabs: true)[
+  + *Entrée :* un graphe $G = (V, E)$ avec des poids $w(u,v) >= 0$ et un sommet source $s in V$
+  + *Sortie :* les distances minimales $d[v]$ de $s$ à chaque sommet $v in V$, et les prédécesseurs
+  + *pour chaque* $v in V$ *faire*
+    + $d[v] <- oo$
+    + $"prec"[v] <-$ indéfini
+  + $d[s] <- 0$
+  + $Q <- V$ #h(1fr) #text(size: 0.85em, fill: luma(120))[\// file de priorité contenant tous les sommets]
+  + *tant que* $Q != emptyset$ *faire*
+    + $u <-$ sommet dans $Q$ avec la plus petite valeur $d[u]$
+    + supprimer $u$ de $Q$
+    + *pour chaque* voisin $v$ de $u$ *faire*
+      + *si* $v in Q$ *et* $d[u] + w(u,v) < d[v]$ *alors*
+        + $d[v] <- d[u] + w(u,v)$
+        + $"prec"[v] <- u$
+  + *retourner* $d$ et $"prec"$
+]) <algo:dijkstra>
+
+Les statistiques... (tableau @tab:cellules_fusionnees).
+
+#figure(
+  caption: [Tableau avec des cellules fusionnées],
+  table(
+    columns: 3,
+    align: left,
+    inset: (x: 8pt, y: 5pt),
+    table.hline(),
+    [*Type de variable*], [*Nom*], [*Abréviation*],
+    table.hline(),
+    [Dépendante], [Dioxyde d'azote (µg/m#super[3])], [NO#sub[2]],
+    table.hline(),
+    [Variable de contrôle], [Température (°C)], [Temp],
+    [], [Humidité (%)], [Humid],
+    [], [Vitesse du vent (km/h)], [Vitesse],
+    table.hline(),
+    [Variable explicative], [Nombre d'intersections (N)], [Inters],
+    [], [Localisation géographique], [XY],
+    [], [Vitesse (km/h)], [Vitesse],
+    table.hline(),
+  ),
+) <tab:cellules_fusionnees>
+
+#lorem(60) (figure @fig:plusieurs_vignettes).
+
+#figure(
+  box(width: 100%, align(center, image("../figures/figureavecplusieursvignettes.png", width: 80%))),
+  caption: [Figure avec plusieurs vignettes. *(a)* Description. *(b)* Description. *(c)* Description. (d) Description. Figure adaptée de #cite(<apparicio2021cycling>, form: "prose", supplement: [p.~2]).],
+) <fig:plusieurs_vignettes>
+
+Pour intégrer des acronymes dans le texte, utiliser la fonction #raw("gls(\"nom-acronyme\")"). Les acronymes doivent être préalablement définis dans le fichier `auxiliaires/acronymes.typ`. Un hyperlien sur l'acronyme renvoie automatiquement à la liste des acronymes.
+
+Voici un exemple, les principaux indices de végétation sont :
+
+- #gls("ndvi")
+- #gls("rvi")
+- #gls("savi")
+- #gls("osavi")
+- #gls("msavi")
+- #gls("ndre")
+- #gls("ndwi")
+- #gls("msi")
+
+Note : la fonction #raw("gls(...)") gère automatiquement l'affichage du nom complet (indice de végétation par différence normalisée) lors de sa première occurrence, puis de son acronyme seul par la suite.
+
+Le plus couramment utilisé et connu est le #gls("ndvi").
+
+Avec les #gls("sig").
+
+Selon l'#gls("onu") et l'#gls("oms").

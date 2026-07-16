@@ -1,0 +1,200 @@
+\chapter{Méthodologie} \label{chap:metho}
+
+Paragraphe. \lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\section{Titre de niveau 1}\label{sec:metho-1}
+
+\lipsum[1-2] % génère deux paragraphes (à supprimer)
+
+\section{Titre de niveau 1}\label{sec:metho-2}
+
+\subsection{Titre de niveau 2}\label{subsec:metho-2-1}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\subsection{Titre de niveau 2}\label{subsec:metho-2-2}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\section{Titre de niveau 1}\label{sec:metho-3}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+\section{Titre de niveau 1}\label{sec:metho-4}
+
+\subsection{Titre de niveau 2}\label{subsec:metho-4-1}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+\subsection{Titre de niveau 2}\label{subsec:metho-4-2}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+\subsubsection{Titre de niveau 3} \label{subsec:metho-4-2-1}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\subsubsection{Titre de niveau 3} \label{subsec:metho-4-2-2}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+\subsection{Titre de niveau 2}\label{subsec:metho-4-3}
+
+Comment numéroter et faire référence à une équation? Les mesures du RMSE et de $R^2$ (équations \ref{eq:rmse} et \ref{eq:r2}) sont utilisées...
+
+
+\begin{equation}
+\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2}{n}} 
+\label{eq:rmse}
+\end{equation}
+
+\begin{equation}
+R^2 = \frac{\sum_{i=1}^{n}\left(\hat{y}_i - \bar{y}\right)^2}{\sum_{i=1}^{n}\left(y_i - \bar{y}\right)^2} 
+\label{eq:r2}
+\end{equation}
+
+L'équation de la régression linéaire multiple s'écrit :
+
+\begin{equation}
+Y = X\beta + \epsilon \quad \text{avec :}
+\label{eq:regression_lineaire}
+\end{equation}
+\begin{itemize}
+    \item $Y$ est un vecteur de dimension $n \times 1$ pour la variable dépendante, soit une colonne avec $n$ observations.
+    \item $X$ est une matrice de dimension $n \times (k+1)$ pour les $k$ variables indépendantes, incluant une autre colonne pour la constante.
+    \item $\beta$ est un vecteur de dimension $k+1$, soit les coefficients de régression pour les $k$ variables et la constante.
+    \item $\epsilon$ est un vecteur de dimension $n \times 1$ pour les résidus.
+\end{itemize} 
+
+L'analyse des résultats du modèle est présentée dans le tableau \ref{tab:tableau1}.
+
+\begin{table}[H]
+    \centering % tableau centré sur la largeur de la page
+    \singlespacing % interligne simple
+    \begin{threeparttable}
+    \caption{Premier tableau du chapitre 3}
+    \label{tab:tableau1}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l c c c}
+    \hline  % ligne
+    \textbf{Colonne A} & \textbf{Colonne B} & \textbf{Colonne C} & \textbf{Colonne D} \\
+    \hline  % ligne
+    Texte & Texte & Texte & Texte \\
+    Texte & Texte & Texte & Texte \\
+    Texte & Texte & Texte & Texte \\
+    Texte & Texte & Texte & Texte \\
+    Texte & Texte & Texte & Texte \\
+    \hline  % ligne
+    \end{tabular}
+    \begin{tablenotes}[flushleft]
+    \small
+    \item \textit{Note :} facultatif.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+Différentes fonctions Kernel peuvent être utlisées (figure~\ref{fig:kernels}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/kernels.png}
+    \caption{Fonctions noyaux (kernel) pour définir la matrice de pondération W(i)}
+    \label{fig:kernels}
+\end{figure}
+
+\newpage
+
+En théorie des graphes, l'algorithme de Dijkstra résout le problème du plus court chemin
+(algorithme~\ref{algo:dijkstra}).
+
+
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\KwIn{Un graphe $G = (V, E)$ avec des poids $w(u,v) \geq 0$ et un sommet source $s \in V$}
+\KwOut{Les distances minimales $d[v]$ de $s$ à chaque sommet $v \in V$, et les prédécesseurs}
+\BlankLine
+\ForEach{$v \in V$}{
+    $d[v] \leftarrow \infty$ \;
+    $\textit{prec}[v] \leftarrow$ indéfini \;
+}
+$d[s] \leftarrow 0$ \;
+$Q \leftarrow V$ \tcp*{file de priorité contenant tous les sommets}
+\While{$Q \neq \emptyset$}{
+    $u \leftarrow$ sommet dans $Q$ avec la plus petite valeur $d[u]$ \;
+    Supprimer $u$ de $Q$ \;
+    \ForEach{$v$ voisin de $u$}{
+        \If{$v \in Q$ \textbf{et} $d[u] + w(u,v) < d[v]$}{
+            $d[v] \leftarrow d[u] + w(u,v)$ \;
+            $\textit{prec}[v] \leftarrow u$ \;
+        }
+    }
+}
+\Return{$d$ et $\textit{prec}$} \;
+\caption{Algorithme de Dijkstra}
+\label{algo:dijkstra}
+\end{algorithm}
+
+Les statistiques... (tableau~\ref{tab:cellules_fusionnees}).
+
+\begin{table}[H]
+    \centering % tableau centré sur la largeur de la page
+    \singlespacing
+    \begin{threeparttable}
+    \caption{Tableau avec des cellules fusionnées}
+    \label{tab:cellules_fusionnees}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lll}
+        \hline
+        \textbf{Type de variable} & \textbf{Nom} & \textbf{Abréviation} \\
+        \hline
+        Dépendante & Dioxyde d'azote ($\mu$g/m$^3$) & NO$_2$ \\
+        \hline
+        Variable de contrôle & Température ($^\circ$C) & Temp \\
+                             & Humidité (\%) & Humid \\
+                             & Vitesse du vent (km/h) & Vitesse \\
+        \hline
+        Variable explicative & Nombre d'intersections (N) & Inters \\
+                             & Localisation géographique & XY \\
+                             & Vitesse (km/h) & Vitesse \\
+        \hline
+    \end{tabular}
+    \end{threeparttable}
+\end{table}
+
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo.
+Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus (figure~\ref{fig:plusieurs_vignettes}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/figureavecplusieursvignettes.png}
+    \caption[Figure avec plusieurs vignettes]{Figure avec plusieurs vignettes. \textbf{(a)} Description. \textbf{(b)} Description. \textbf{(c)} Description. (d) Description. Figure adaptée de \textcite[2]{apparicio2021cycling}.}
+    \label{fig:plusieurs_vignettes}
+\end{figure}
+
+
+Pour intégrer des acronymes dans le texte, utiliser la commande \textbf{\string\gls\{nom-acronyme\}}. Les acronymes doivent être préalablement définis dans le fichier \textbf{auxilaires/acronymes.tex}. Un hyperlien sur l'acronomyme renvoie ainsi automatiquement à la liste des acronymes.
+
+Voici un exemple, les principaux indices de végétation sont\,: 
+
+\begin{itemize}
+    \item \gls{ndvi}
+    \item \gls{rvi}
+    \item \gls{savi}
+    \item \gls{osavi}
+    \item \gls{msavi}
+    \item \gls{ndre}
+    \item \gls{ndwi}
+    \item \gls{msi}
+\end{itemize}
+
+Note : La commande \textbf{\string\gls\{nom-acronyme\}} gérera automatiquement l'affichage du nom complet (Indice de végétation par différence normalisée) lors de sa première occurrence, puis de son acronyme seul par la suite.
+
+Le plus couramment utilisé et connu est le \gls{ndvi}
+
+Avec les \gls{sig}.
+
+Selon l'\gls{onu} et l'\gls{oms}.

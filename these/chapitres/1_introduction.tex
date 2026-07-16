@@ -1,0 +1,56 @@
+\chapter{Introduction} \label{chap:introduction}
+
+Dans ce modèle, les styles sont paramétrés afin de respecter les normes de mise en page d’un mémoire ou d'une thèse présentées dans le \href{https://www.usherbrooke.ca/geomatique/fileadmin/sites/geomatique/espace-etudiant/guide-redaction2004_vf.pdf}{guide de rédaction de Jean-Marie-Dubois}. \textcolor{eclipsepurple}{\textbf{La table des matières et les titres des chapitres présentés dans ce modèle sont fournis à titre indicatif seulement. Ils doivent être revus et adaptés afin de refléter fidèlement les objectifs, la méthodologie et les résultats propres à votre recherche.}}
+
+\section{Titre de niveau 1} \label{sec:introduction-1}
+Voici un paragraphe.
+
+Voici un second paragraphe.
+
+\lipsum[1-2] % génère 2 paragraphes (à supprimer)
+
+\section{Titre de niveau 1} \label{sec:introduction-2}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+\section{Titre de niveau 1} \label{sec:introduction-3}
+
+Bonnes pratiques pour nommer les \textit{labels} dans un document \LaTeX :
+
+\begin{itemize}
+    \item \textbf{chap:} pour les \textit{chapitres} : \verb|\label{chap:introduction}|.
+    \item \textbf{sections :}
+    \begin{itemize}
+        \item \textbf{sec:} pour les \textit{sections de niveau 1} : \verb|\label{sec:mise_en_contexte}|.
+        \item \textbf{subsec:} pour les \textit{sous-sections de niveau 2} : \verb|\label{subsec:sous_section}|.
+        \item \textbf{subsubsec:} pour les \textit{sous-sections de niveau 3} : 
+        \lstinline|\label{subsubsec:sous_sous_section}|.
+    \end{itemize}
+    \item \textbf{fig:} pour les \textit{figures} : \verb|\label{fig:territoire_etude}|.
+    \item \textbf{tab:} pour les \textit{tableaux} : \verb|\label{tab:statistiques_descrip}|.
+    \item \textbf{eq:} pour les \textit{équations} : \verb|\label{eq:rmse}|.
+    \item \textbf{algo:} pour les \textit{algorithmes} : \verb|\label{algo:dijkstra}|.
+\end{itemize}
+
+Ces conventions permettent d'assurer une bonne organisation et lisibilité du code source, et d'éviter les conflits entre les \textit{labels}. Elles permettent aussi de faire référence à un élément dans le texte. Par exemple...
+
+Comme discuté dans la section~\ref{sec:introduction-1}, ...
+
+\subsection{Titre de niveau 2} \label{sec:introduction-3-1}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\subsection{Titre de niveau 2} \label{sec:introduction-3-2}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\subsection{Titre de niveau 2} \label{sec:introduction-3-3}
+
+\lipsum[1] % génère un paragraphe (à supprimer)
+
+
+\section{Titre de niveau 1} \label{sec:introduction-4}
+
+\lipsum[1-2] % génère 2 paragraphes (à supprimer)

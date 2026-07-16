@@ -1,0 +1,479 @@
+%-###############################################################################
+% Modèle LaTeX construit par
+% Philippe Apparicio, professeur titulaire,
+% Département de géomatique appliquée
+% Université de Sherbrooke
+%-###############################################################################
+% Type de document
+\documentclass[12pt,fleqn,twoside]{report}
+%-###############################################################################
+% Liste des packages
+%-###############################################################################
+% Packages de base
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Pour un document en français
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{hyphenat}
+\hyphenation{géo-matique métho-dologie}
+
+%-###############################################################################
+% Configuration des polices
+%-###############################################################################
+% Chargement de la police par défaut (ici Times New Roman)
+% Pour changer de police par défaut, commentez \usepackage{newtxtext} 
+% et décommentez la ligne de la police de votre choix.
+\usepackage{libertine}  % Libertine
+%\usepackage{ebgaramond} % EB Garamond
+%\usepackage{newpxtext}  % Palatino
+%\usepackage{newtxtext}   % Times New Roman
+
+% Mathématiques
+\usepackage{amsmath}
+% \usepackage{amssymb}  % inclus dans newtxmath — ne pas charger les deux
+% Police pour les formules mathématiques (changer en cohérence avec la police du texte)
+    %\usepackage{newtxmath}         % Times New Roman
+    %\usepackage{newpxmath}        % Palatino
+    \usepackage{libertinust1math} % Libertine
+   % \usepackage{ebgaramond-maths} % EB Garamond
+
+%-###############################################################################
+% Mise en page
+%-###############################################################################
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{emptypage} 
+% Couleurs et hyperliens
+%https://www.usherbrooke.ca/communications/fileadmin/sites/communications/uploads/CharteCouleurs_Contrastes_UdeS.pdf
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{.8, 0.0, 0.0}
+\definecolor{myblue}{rgb}{0.0, 0.2, 0.6}
+% Couleurs de l'Université de SHerbrooke (Format HTML / Hexadécimal)
+\definecolor{UdesBlanc}{HTML}{FFFFFF}
+\definecolor{UdesNoir}{HTML}{000000}
+\definecolor{UdesDeveloppementDurable}{HTML}{95C14E}
+\definecolor{UdesVivacite}{HTML}{79B551}
+\definecolor{UdesCreativite}{HTML}{5AAD55}
+\definecolor{UdesFierte}{HTML}{00A759}
+\definecolor{UdesSolidarite}{HTML}{3D8F58}
+\definecolor{UdesBienEtre}{HTML}{447C5A}
+\definecolor{UdesReussite}{HTML}{486A5C}
+\definecolor{UdesGris}{HTML}{B6BAAF}
+\definecolor{UdesJaune}{HTML}{E5A939}
+\definecolor{UdesOrange}{HTML}{B45E2F}
+\definecolor{UdesViolet}{HTML}{805286}
+\definecolor{UdesReussiteContraste1}{HTML}{11594B}
+\definecolor{UdesReussiteContraste2}{HTML}{18463A}
+\definecolor{UdesDDContrasteUn}{HTML}{A6C74B}
+\definecolor{UdesFierteAccessible}{HTML}{018849}
+\usepackage[colorlinks=true,
+            linkcolor=UdesReussiteContraste1,
+            citecolor=UdesViolet,
+            urlcolor=UdesReussiteContraste1]{hyperref}
+% Figures et graphiques
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+% Tableaux
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+% Texte et citations
+\usepackage{csquotes}
+\usepackage{lipsum}
+% Algorithmes
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+% Package pour le bandeau dans la page titre
+\usepackage{tikz}
+% Package pour les acronymes
+\usepackage[xindy,acronyms,symbols,toc]{glossaries}
+\setlength{\glsdescwidth}{1\linewidth}
+\makeglossaries
+\setacronymstyle{long-sc-short}
+\setglossarystyle{indexhypergroup}
+\loadglsentries{auxiliaires/acronymes}
+% Bibliographie
+\usepackage[backend=biber,style=apa,language=french]{biblatex}
+\addbibresource{bibliographie.bib}
+% package pour les unités de mesure
+\usepackage{siunitx}
+\sisetup{
+  locale               = FR,
+  output-decimal-marker = {,},
+  group-separator       = {\,},
+  per-mode              = symbol,
+  separate-uncertainty  = true,
+}
+
+%-###############################################################################
+% Configuration des scripts Python, R, Javascript, C et MATLAB
+%-###############################################################################
+% Package pour du code R, Python et Javascript
+\usepackage{listings}
+\usepackage{inconsolata}
+\usepackage{xcolor} % Assurez-vous que xcolor est chargé pour les définitions de couleurs
+
+% --- Couleurs thème Eclipse / RStudio ---
+\definecolor{eclipsestring}{RGB}{42, 0, 255}    % chaînes : bleu
+\definecolor{eclipsecomment}{RGB}{63, 127, 95}  % commentaires : vert
+\definecolor{eclipsenumber}{RGB}{125, 0, 125}   % numéros de ligne : mauve
+\definecolor{eclipsepurple}{RGB}{127, 0, 85}    % mots-clés : mauve/violet
+% --- Couleurs additionnelles (pour Python, C et MATLAB) ---
+\definecolor{pythonblue}{RGB}{0, 102, 204}
+\definecolor{pythondarkred}{RGB}{153, 0, 0}
+\definecolor{pythonteal}{RGB}{0, 128, 128}
+\definecolor{mGreen}{RGB}{34,139,34}
+\definecolor{mGray}{RGB}{128,128,128}
+\definecolor{mPurple}{RGB}{160,32,240}
+\definecolor{mBlue}{RGB}{0,0,255}
+\definecolor{graybackgroundscript}{gray}{0.95}   % Fond uni pour tous les codes
+% --- Configuration commune (Python, R, JS, C, MATLAB) ---
+\lstdefinestyle{sharedConfig}{
+  basicstyle=\ttfamily\footnotesize\singlespacing,
+  numbers=left,
+  numberstyle=\tiny\color{eclipsenumber},
+  numbersep=9pt,                                 % Harmonisé pour l'alignement
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{graybackgroundscript},   % Même fond pour une structure propre
+  showstringspaces=false,
+  showspaces=false,
+  tabsize=4,                                     % Passé à 4 (standard universel)
+  inputencoding=utf8,
+  extendedchars=true,
+  captionpos=t,                                  % Titre en haut par défaut pour tous
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+           {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+           {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+           {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+           {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+           {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+           {ë}{{\"e}}1 {ï}{{\"i}}1 {ü}{{\"u}}1 {ÿ}{{\"y}}1
+           {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ü}{{\"U}}1
+           {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1
+           {æ}{{\ae}}1 {Æ}{{\AE}}1,
+}
+% --- Style : PYTHON ---
+\lstdefinestyle{stylePython}{
+  style=sharedConfig,
+  language=Python,
+  keywordstyle=\color{pythonblue}\bfseries, 
+  commentstyle=\color{pythonteal},    
+  stringstyle=\color{pythondarkred}     
+}
+% --- Style : R ---
+\lstdefinelanguage{Rcustom}{
+  keywords={if, else, repeat, while, function, for, in, next, break,
+            TRUE, FALSE, NULL, Inf, NaN, NA, NA_integer_, NA_real_,
+            NA_complex_, NA_character_, T, F},
+  morekeywords={library, require, summary, print, cat},
+  sensitive=true,
+  morecomment=[l]{\#},   
+  morestring=[b]",       
+  morestring=[b]'        
+}
+\lstdefinestyle{styleR}{
+  style=sharedConfig,
+  language=Rcustom,
+  keywordstyle=\color{eclipsepurple}\bfseries,   
+  commentstyle=\color{eclipsecomment},           
+  stringstyle=\color{eclipsestring}                  
+}
+% --- Style : JavaScript GEE ---
+\lstdefinelanguage{JScustom}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, const, let, class, export, import},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstdefinestyle{styleJavascript}{
+  style=sharedConfig,
+  language=JScustom,
+  keywordstyle=\color{eclipsepurple}\bfseries,   
+  commentstyle=\color{eclipsecomment},           
+  stringstyle=\color{eclipsestring}
+}
+% --- Style : C ---
+\lstdefinestyle{styleC}{
+  style=sharedConfig,
+  language=C,
+  keywordstyle=\color{eclipsepurple}\bfseries,   % Mots-clés en mauve (int, return, if...)
+  commentstyle=\color{eclipsecomment},           % Commentaires en vert (// ou /* */)
+  stringstyle=\color{eclipsestring},             % Chaînes de caractères en bleu ("...")
+  directivestyle=\color{pythonblue}              % CORRIGÉ : Correction de 'myblue' manquant
+}
+% --- Style : MATLAB ---
+\lstdefinestyle{styleMATLAB}{
+  style=sharedConfig,
+  language=Matlab,
+  commentstyle=\color{mGreen},
+  keywordstyle=\color{mBlue},
+  stringstyle=\color{mPurple}
+}
+
+%-###############################################################################
+% Configuration de la bibliographie
+%-###############################################################################
+% Enlever les petites majuscules dans les noms des auteurs
+\AtEveryCite{\renewcommand{\mkbibnamefamily}[1]{#1}}
+%enlever les petites majuscules dans les noms des auteurs et aussi pour la biblio
+\AtBeginBibliography{\renewcommand{\mkbibnamefamily}[1]{#1}}
+% "et al." en italique
+\DefineBibliographyStrings{french}{%
+  andothers = {\mkbibemph{et al\adddot}}}
+
+%-###############################################################################
+% Commandes personnalisées
+%-###############################################################################
+\newcommand{\important}[1]{\textbf{\textit{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+%-###############################################################################
+% En-têtes et pieds de page
+%-###############################################################################
+\AtBeginDocument{
+  \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+}
+% --- Ligne de fancyhdr avec UdesReussite ---
+\makeatletter
+\patchcmd{\headrule}{\hrule}{\color{UdesReussite}\hrule}{}{}
+\makeatother
+% Style pour les pages préliminaires (numéros romains)
+\fancypagestyle{plain}{
+    \fancyhf{}
+    % Numéro de page en couleur UdesReussite
+    \fancyfoot[C]{\color{UdesReussite}-- \thepage~--}
+    \renewcommand{\headrulewidth}{0pt} % Pas de ligne sur les pages de début de chapitre
+}
+% Style pour le corps du mémoire (numéros arabes)
+\fancypagestyle{main}{
+    \fancyhf{}
+    % Titres courants en couleur UdesReussite
+    \fancyhead[RO]{\fontsize{10}{12}\selectfont\color{UdesReussite}\leftmark}
+    \fancyhead[LE]{\fontsize{10}{12}\selectfont\color{UdesReussite}\nouppercase{\ifx\rightmark\empty\leftmark\else\rightmark\fi}}
+    % Numéro de page en couleur UdesReussite
+    \fancyfoot[C]{\color{UdesReussite}-- \thepage~--}
+    \renewcommand{\headrulewidth}{0.4pt} % Épaisseur de la ligne verte
+}
+
+%-###############################################################################
+% Mise en page et styles
+%-###############################################################################
+% Mise en page générale
+\geometry{paperwidth=8.5in,paperheight=11in, margin=2.5cm,headheight=14pt,headsep=10pt}
+\raggedbottom   % ← évite l'étirement vertical des pages
+\onehalfspacing % interligne 1,5
+\setlength{\mathindent}{1cm}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+% Espacement autour des flottants (figures et tableaux)
+\setlength{\textfloatsep}{8pt}    % espace entre flottant et texte
+\setlength{\intextsep}{10pt}       % espace autour des flottants [H]
+\setlength{\floatsep}{8pt}        % espace entre deux flottants
+% Espacement autour des longtables
+\setlength{\LTpre}{8pt}
+\setlength{\LTpost}{8pt}
+
+%--------------------------------------------------------------------------------
+% Format des chapitres numérotés
+\titleformat{\chapter}[display]%
+   {\fontsize{30pt}{30pt}\selectfont\rmfamily\bfseries\color{UdesReussiteContraste2}} % format du titre 
+   {\fontsize{70pt}{50pt}\selectfont\upshape\thechapter} %  format du numéro
+   {2pt}% espace entre le numéro et le titre
+   {}% avant le titre body
+   [{\titlerule[0.8pt]\vspace{20pt}}]% trait de 0.8 avec un espace 20 pt après
+
+%--------------------------------------------------------------------------------
+% Format des chapitres non numérotés
+\titleformat{name=\chapter,numberless}[hang]
+   {\fontsize{18pt}{19pt}\selectfont\rmfamily\bfseries\color{UdesReussiteContraste2}}
+   {} % Pas de numéro affiché
+   {0pt} % Pas d'espace de séparation nécessaire
+   {} % Avant le titre
+   [\vspace{20pt}] % On met juste un espace après le titre, sans la ligne
+
+% Formats des autres sections et sous-sections
+\titleformat{\section}
+    {\normalfont\fontsize{16}{16}\selectfont\bfseries\color{UdesReussiteContraste2}}
+    {\thesection}{.5em}{}
+\titleformat{\subsection}
+    {\normalfont\fontsize{14}{16}\selectfont\bfseries\color{UdesReussiteContraste2}}
+    {\thesubsection}{.5em}{}
+\titleformat{\subsubsection}
+    {\normalfont\fontsize{12}{16}\selectfont\bfseries\color{UdesReussiteContraste2}}
+    {\thesubsubsection}{.5em}{}
+\titlespacing*{\chapter}{0pt}{-25pt}{8pt}
+\titlespacing*{\section}{0pt}{12pt}{3pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+
+%--------------------------------------------------------------------------------
+% Taille des titres des listes et table des matières
+\renewcommand{\cftloftitlefont}{\normalfont\fontsize{18}{19}\selectfont\bfseries\color{UdesReussiteContraste2}}
+\renewcommand{\cftlottitlefont}{\normalfont\fontsize{18}{19}\selectfont\bfseries\color{UdesReussiteContraste2}}
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{18}{19}\selectfont\bfseries\color{UdesReussiteContraste2}}
+
+% Préfixes dans les listes
+\renewcommand{\cfttabpresnum}{Tableau~}
+\renewcommand{\cftfigpresnum}{Figure~}
+\setlength{\cfttabnumwidth}{6em}
+\setlength{\cftfignumwidth}{6em}
+
+% Préfixe "Algorithme" dans la liste des algorithmes
+\makeatletter
+\renewcommand{\l@algocf}[2]{%
+  \@dottedtocline{1}{1.5em}{2em}{Algorithme~#1}{#2}%
+}
+\makeatother
+
+%--------------------------------------------------------------------------------
+% Profondeur table des matières et numérotation
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+%--------------------------------------------------------------------------------
+% Figures et tableaux : légendes
+\captionsetup[figure]{labelfont=bf, aboveskip=4pt, belowskip=0pt}
+\captionsetup[table]{name=Tableau, labelfont=bf, position=above, aboveskip=4pt, belowskip=0pt, singlelinecheck=false}
+
+% Taille du texte dans les tableaux
+\AtBeginEnvironment{tabular}{\fontsize{11}{13}\selectfont}
+\AtBeginEnvironment{longtable}{\fontsize{11}{13}\selectfont}
+\AtBeginEnvironment{tabularx}{\fontsize{11}{13}\selectfont}
+
+%--------------------------------------------------------------------------------
+% Espacement des équations
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{8pt}
+  \setlength\abovedisplayshortskip{2pt}
+  \setlength\belowdisplayshortskip{2pt}
+}
+\makeatother
+
+%--------------------------------------------------------------------------------
+% Noms des listes en français
+\renewcommand{\algorithmcfname}{Algorithme}
+\renewcommand{\lstlistingname}{Code}
+\renewcommand{\listalgorithmcfname}{Liste des algorithmes}
+\renewcommand{\lstlistlistingname}{Liste des scripts}
+\addto\captionsfrench{
+  \renewcommand{\listfigurename}{Liste des figures}
+  \renewcommand{\listtablename}{Liste des tableaux}
+}
+
+%--------------------------------------------------------------------------------
+% Environnement citation personnalisé
+\newenvironment{customquote}
+  {\begin{quote}
+   \setlength{\leftskip}{1cm}
+   \setlength{\rightskip}{1cm}
+   \renewcommand{\baselinestretch}{1.0}\selectfont
+   \small}
+  {\end{quote}}
+
+%-###############################################################################
+% Structure du document
+%-###############################################################################
+\begin{document}
+% Pages préliminaires sans en-tête ni numéro
+\pagestyle{empty}
+\input{fichiers_introductifs/page_titre}
+\input{fichiers_introductifs/jury}
+\input{fichiers_introductifs/citation}
+
+% Pages préliminaires avec chiffres romains
+\cleardoublepage
+\pagenumbering{roman}
+\pagestyle{plain}
+\input{fichiers_introductifs/resume_abstract}
+
+\renewcommand{\cftbeforechapskip}{4pt}
+\renewcommand{\cftbeforesecskip}{0pt}
+\renewcommand{\cftbeforesubsecskip}{0pt}
+\begingroup
+    %\onehalfspacing
+    \singlespacing
+    \tableofcontents
+    \newpage
+    % Liste des figures (obligatoire)
+    \phantomsection
+    \listoffigures
+    \addcontentsline{toc}{chapter}{Liste des figures}
+    \newpage
+     % Liste des tableaux (obligatoire)
+    \phantomsection
+    \listoftables
+    \addcontentsline{toc}{chapter}{Liste des tableaux}
+    \newpage
+    % Liste des algorithmes — mettre les quatre lignes ci-dessous en commentaires
+    % s'il y a pas d'algorithmes
+    \phantomsection
+    \listofalgorithms
+    \addcontentsline{toc}{chapter}{Liste des algorithmes}
+    \newpage
+    % Liste des scripts — mettre les quatre lignes ci-dessous en commentaires
+    % s'il y a pas de scripts Python ou R
+    \phantomsection
+    \lstlistoflistings
+    \addcontentsline{toc}{chapter}{Liste des scripts}
+    \newpage
+    % Insertion de la liste des acronymes (obligatoire)
+    {\renewcommand{\glsnamefont}[1]{\textbf{#1}}%
+    \printglossary[type=\acronymtype, title={Liste des abréviations et des sigles}, style=long]}
+    \newpage
+    % Liste des symboles et des formules chimiques
+    % Mettre en commentaire la ligne ci-dessous, si il n'y a pas de symboles et de formules chimiques
+    \input{fichiers_introductifs/SymbolesEtFormulesChimiques}
+\endgroup
+
+% fichiers optionnels : à supprimer si non souhaités
+\input{fichiers_introductifs/remerciements}
+\input{fichiers_introductifs/avant_propos}
+% fichier obligatoire
+\input{fichiers_introductifs/declaration_ia}
+
+%--------------------------------------------------------------------------------
+% Corps du document : chiffres arabes + en-têtes
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{main}   % ← activer le style avec en-têtes
+% Appel des chapitres
+\input{chapitres/_partie_I}
+\input{chapitres/1_introduction}
+\input{chapitres/2_revue_litterature}
+\input{chapitres/3_methodologie}
+\input{chapitres/_partie_II}
+\input{chapitres/4_1er_article}
+\input{chapitres/5_2e_article}
+\selectlanguage{french}
+\input{chapitres/_partie_III}
+\input{chapitres/6_discussion}
+\input{chapitres/7_conclusion}
+
+% Bibliographie
+\clearpage
+\pagestyle{main}
+\defbibheading{bibliography}[\bibname]{%
+    \chapter*{#1}%
+    \markboth{Bibliographie}{Bibliographie}%   % ← force les deux côtés
+}
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+% Annexe
+\pagestyle{main}   % ← activer le style avec en-têtes
+\input{chapitres/annexes}
+\end{document}

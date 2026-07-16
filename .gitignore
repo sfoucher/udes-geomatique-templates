@@ -1,0 +1,5 @@
+# Build artifacts — regenerate from the templates
+*.zip
+
+# Compiled output (reference PDFs are kept as examples)
+**/main.pdf
