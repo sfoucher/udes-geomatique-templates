@@ -31,8 +31,10 @@ Détails, fonctions du modèle et écarts vs LaTeX : [`README-typst.md`](README-
 ## Pour les étudiant·e·s
 
 Des archives prêtes à l'emploi (Typst uniquement + README en français + PDF
-d'exemple) sont générées à part : `Geomatique_essai_typst.zip` et
-`Geomatique_these_typst.zip`.
+d'exemple) sont disponibles dans la
+[dernière version (*release*)](https://github.com/sfoucher/udes-geomatique-templates/releases/latest) :
+`Geomatique_essai_typst.zip` (mémoire) et `Geomatique_these_typst.zip` (thèse
+par articles).
 
 ## Crédits
 
