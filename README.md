@@ -4,24 +4,30 @@ Gabarits de rédaction pour les études supérieures en géomatique appliquée �
 l'Université de Sherbrooke, en **LaTeX** et en **Typst**. Conversion Typst du
 gabarit LaTeX de **Philippe Apparicio**.
 
-## Les deux modèles
+## Les modèles
 
-| Modèle | Pour | Dossier | Point d'entrée |
+| Modèle | Pour | Dossier | Compilation |
 |---|---|---|---|
-| **Mémoire / essai** | maîtrise | [`essai/`](essai/) | `essai/main.typ` · `essai/main.tex` |
-| **Thèse par articles** | doctorat (parties + articles) | [`these/`](these/) | `these/main.typ` · `these/main.tex` |
+| **Mémoire traditionnel** | maîtrise | [`memoire_traditionnel/`](memoire_traditionnel/) | `typst compile main.typ` |
+| **Mémoire par article** | maîtrise | [`memoire_par_article/`](memoire_par_article/) | `typst compile main.typ` |
+| **Thèse traditionnelle** | doctorat | [`these_traditionnelle/`](these_traditionnelle/) | `typst compile main.typ` |
+| **Thèse par articles** | doctorat (parties + articles) | [`these/`](these/) | `typst compile --root .. main.typ` |
+| Essai de maîtrise | maîtrise (essai) | [`essai/`](essai/) | `typst compile --root .. main.typ` |
 
-Les deux partagent le modèle Typst [`udes-thesis.typ`](udes-thesis.typ) (styles +
-fonctions), importé via `../udes-thesis.typ`.
+Les trois premiers modèles sont **autonomes** : chaque dossier embarque sa propre
+feuille de style `styles.typ` et son style bibliographique APA français
+(`universite-de-montreal-apa.csl`) — il se compile seul avec `typst compile main.typ`.
+
+`essai/` et `these/` partagent le modèle [`udes-thesis.typ`](udes-thesis.typ) à la
+racine, importé via `../udes-thesis.typ` ; ils demandent donc l'option `--root ..`.
 
 ## Compiler (Typst)
 
 ```sh
-cd essai            # ou these
-typst compile --root .. main.typ main.pdf
+cd memoire_traditionnel      # modèle autonome
+typst compile main.typ
 ```
 
-`--root ..` est requis car les `main.typ` importent `../udes-thesis.typ`.
 Première compilation : Typst télécharge une fois les paquets `@preview`
 (`glossarium`, `codly`, `codly-languages`, `lovelace`) — Internet requis une
 seule fois.
@@ -33,8 +39,9 @@ Détails, fonctions du modèle et écarts vs LaTeX : [`README-typst.md`](README-
 Des archives prêtes à l'emploi (Typst uniquement + README en français + PDF
 d'exemple) sont disponibles dans la
 [dernière version (*release*)](https://github.com/sfoucher/udes-geomatique-templates/releases/latest) :
-`Geomatique_essai_typst.zip` (mémoire) et `Geomatique_these_typst.zip` (thèse
-par articles).
+`Geomatique_memoire_traditionnel_typst.zip`, `Geomatique_memoire_par_article_typst.zip`,
+`Geomatique_these_traditionnelle_typst.zip`, ainsi que
+`Geomatique_essai_typst.zip` et `Geomatique_these_typst.zip`.
 
 ## Crédits
 
