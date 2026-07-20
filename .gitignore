@@ -3,3 +3,6 @@
 
 # Compiled output (reference PDFs are kept as examples)
 **/main.pdf
+
+# Windows / OneDrive folder metadata
+desktop.ini
