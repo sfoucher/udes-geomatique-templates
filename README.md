@@ -4,6 +4,8 @@ Gabarits de rédaction pour les études supérieures en géomatique appliquée �
 l'Université de Sherbrooke, en **LaTeX** et en **Typst**. Conversion Typst du
 gabarit LaTeX de **Philippe Apparicio**.
 
+📦 **[Télécharger les modèles Typst prêts à l'emploi (dernière version)](https://github.com/sfoucher/udes-geomatique-templates/releases/latest)** — archives avec README français et PDF d'exemple.
+
 ## Les modèles
 
 | Modèle | Pour | Dossier | Compilation |
