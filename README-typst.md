@@ -13,7 +13,7 @@ essai/                 ← mémoire / essai de maîtrise
   fichiers_introductifs/*.typ
   chapitres/*.typ
   figures/  logoUdes/  Scripts_Programmes/  bibliographie.bib   (réutilisés du LaTeX)
-these/                 ← thèse par articles (mêmes styles + pages de « Partie » + articles)
+these_par_articles/    ← thèse par articles (mêmes styles + pages de « Partie » + articles)
   main.typ, ...
 ```
 
@@ -23,7 +23,7 @@ Les deux `main.typ` importent `../udes-thesis.typ`, il faut donc pointer la
 racine du projet sur le dossier parent :
 
 ```sh
-# depuis essai/  (ou these/)
+# depuis essai/  (ou these_par_articles/)
 typst compile --root .. main.typ main.pdf
 # ou en watch
 typst watch --root .. main.typ

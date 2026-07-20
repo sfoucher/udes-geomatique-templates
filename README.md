@@ -11,14 +11,14 @@ gabarit LaTeX de **Philippe Apparicio**.
 | **Mémoire traditionnel** | maîtrise | [`memoire_traditionnel/`](memoire_traditionnel/) | `typst compile main.typ` |
 | **Mémoire par article** | maîtrise | [`memoire_par_article/`](memoire_par_article/) | `typst compile main.typ` |
 | **Thèse traditionnelle** | doctorat | [`these_traditionnelle/`](these_traditionnelle/) | `typst compile main.typ` |
-| **Thèse par articles** | doctorat (parties + articles) | [`these/`](these/) | `typst compile --root .. main.typ` |
+| **Thèse par articles** | doctorat (parties + articles) | [`these_par_articles/`](these_par_articles/) | `typst compile --root .. main.typ` |
 | Essai de maîtrise | maîtrise (essai) | [`essai/`](essai/) | `typst compile --root .. main.typ` |
 
 Les trois premiers modèles sont **autonomes** : chaque dossier embarque sa propre
 feuille de style `styles.typ` et son style bibliographique APA français
 (`universite-de-montreal-apa.csl`) — il se compile seul avec `typst compile main.typ`.
 
-`essai/` et `these/` partagent le modèle [`udes-thesis.typ`](udes-thesis.typ) à la
+`essai/` et `these_par_articles/` partagent le modèle [`udes-thesis.typ`](udes-thesis.typ) à la
 racine, importé via `../udes-thesis.typ` ; ils demandent donc l'option `--root ..`.
 
 ## Compiler (Typst)

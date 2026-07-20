@@ -1,6 +1,6 @@
 # Latex-Typst — UdeS géomatique thesis templates
 
-Two thesis templates (LaTeX + Typst): `essai/` (mémoire) and `these/` (thèse par articles).
+Two thesis templates (LaTeX + Typst): `essai/` (mémoire) and `these_par_articles/` (thèse par articles).
 Shared Typst model `udes-thesis.typ` at repo root, imported via `../udes-thesis.typ`.
 
 ## Environment
@@ -11,7 +11,7 @@ Shared Typst model `udes-thesis.typ` at repo root, imported via `../udes-thesis.
 - Typst 0.15.0 on PATH as `typst`.
 
 ## Compile Typst
-- `cd essai && typst compile --root .. main.typ main.pdf` — `--root ..` required (mains import `../udes-thesis.typ`). Same for `these/`.
+- `cd essai && typst compile --root .. main.typ main.pdf` — `--root ..` required (mains import `../udes-thesis.typ`). Same for `these_par_articles/`.
 - First compile downloads `@preview` packages (glossarium, codly, codly-languages, lovelace) — needs internet once.
 
 ## Distribution
