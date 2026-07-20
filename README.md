@@ -41,7 +41,7 @@ d'exemple) sont disponibles dans la
 [dernière version (*release*)](https://github.com/sfoucher/udes-geomatique-templates/releases/latest) :
 `Geomatique_memoire_traditionnel_typst.zip`, `Geomatique_memoire_par_article_typst.zip`,
 `Geomatique_these_traditionnelle_typst.zip`, ainsi que
-`Geomatique_essai_typst.zip` et `Geomatique_these_typst.zip`.
+`Geomatique_essai_typst.zip` et `Geomatique_these_par_articles_typst.zip`.
 
 ## Crédits
 
