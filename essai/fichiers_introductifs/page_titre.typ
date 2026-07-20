@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 // bandeau : option 2 (logo blanc dans le bandeau) — palette foncée
 // pour l'option 1 (logo horizontal à côté), mettre option-logo: 1
@@ -8,7 +8,7 @@
   bandeau-couleur: UdesFierteAccessible,
   option-logo: 2,
   logo-bandeau: image("../logoUdes/UdeS_logo_v_blancHR.png", width: 2.8cm),
-  logo-cote: image("../logoUdes/UdeS_logo_h_rgbHR.png", width: 40%),
+  logo-cote: image("../logoUdes/UdeS_logo_h_rgbHR.png", width: 30%),
   titre: [Titre dans la langue de rédaction \ (français ou anglais)],
   titre-fr: [Titre en français, si la langue de rédaction est l'anglais],
   auteur: [#smallcaps[Prénom] NOM],

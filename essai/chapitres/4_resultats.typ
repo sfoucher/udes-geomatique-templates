@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 = Résultats <chap:resultats>
 
@@ -17,6 +17,7 @@ Paragraphe.
 
 Les statistiques... (tableau @tab:cellules_fusionnees).
 
+Variable de contrôle
 #figure(
   caption: [Tableau avec des cellules fusionnées],
   table(
@@ -42,6 +43,9 @@ Les statistiques... (tableau @tab:cellules_fusionnees).
 #lorem(60) (figure @fig:plusieurs_vignettes).
 
 #figure(
-  box(width: 100%, align(center, image("../figures/figureavecplusieursvignettes.png", width: 80%))),
-  caption: [Figure avec plusieurs vignettes. *(a)* Description. *(b)* Description. *(c)* Description. (d) Description. Figure adaptée de #cite(<apparicio2021cycling>, form: "prose", supplement: [p.~2]).],
+  image("../figures/figureavecplusieursvignettes.png", width: 80%),
+  caption: flex-caption(
+    [Figure avec plusieurs vignettes. *(a)* Description. *(b)* Description. *(c)* Description. (d) Description. Figure adaptée de #cite(<apparicio2021cycling>, form: "prose", supplement: [p.~2]).],
+    [Figure avec plusieurs vignettes],
+  ),
 ) <fig:plusieurs_vignettes>

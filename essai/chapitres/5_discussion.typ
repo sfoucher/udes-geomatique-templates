@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 = Discussion des résultats <chap:discussion>
 

@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 = Matériel et méthodes <chap:metho>
 
@@ -65,19 +65,20 @@ L'analyse des résultats du modèle est présentée dans le tableau @tab:tableau
 
 #figure(
   caption: [Premier tableau du chapitre 3],
-  {
-    table(
-      columns: (auto, auto, auto, auto),
-      align: (left, center, center, center),
-      inset: (x: 8pt, y: 5pt),
-      table.hline(),
-      [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
-      table.hline(),
-      ..(([Texte],) * 20),
-      table.hline(),
-    )
-    align(left, text(size: 9pt)[_Note :_ facultatif.])
-  },
+  table(
+    columns: (auto, auto, auto, auto),
+    align: (left, center, center, center),
+    inset: (x: 8pt, y: 5pt),
+    table.hline(),
+    [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
+    table.hline(),
+    ..(([Texte],) * 20),
+    table.hline(),
+    table.cell(colspan: 4, align: left, stroke: none,
+      inset: (x: 0pt, top: 4pt))[
+      #text(size: 9pt)[_Note :_ facultatif.]
+    ],
+  ),
 ) <tab:tableau1>
 
 Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
@@ -89,19 +90,20 @@ Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
 
 #figure(
   caption: [Deuxième tableau du chapitre 3],
-  {
-    table(
-      columns: (auto, auto, auto, auto),
-      align: (left, center, center, center),
-      inset: (x: 8pt, y: 5pt),
-      table.hline(),
-      [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
-      table.hline(),
-      ..(([Texte],) * 20),
-      table.hline(),
-    )
-    align(left, text(size: 9pt)[_Note :_ facultatif.])
-  },
+  table(
+    columns: (auto, auto, auto, auto),
+    align: (left, center, center, center),
+    inset: (x: 8pt, y: 5pt),
+    table.hline(),
+    [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
+    table.hline(),
+    ..(([Texte],) * 20),
+    table.hline(),
+    table.cell(colspan: 4, align: left, stroke: none,
+      inset: (x: 0pt, top: 4pt))[
+      #text(size: 9pt)[_Note :_ facultatif.]
+    ],
+  ),
 ) <tab:tableau2>
 
 #pagebreak()
