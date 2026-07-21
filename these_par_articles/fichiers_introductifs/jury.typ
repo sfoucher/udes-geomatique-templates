@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 // chapitre non numéroté, absent de la table des matières
 #heading(level: 1, numbering: none, outlined: false)[Jury d'évaluation]

@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 // bandeau : option 2 (logo blanc dans le bandeau) — palette foncée
 // pour l'option 1 (logo horizontal à côté), mettre option-logo: 1

@@ -5,7 +5,6 @@
 #page-titre(
   type-doc: [THÈSE DE DOCTORAT],
   bandeau-sous: [Télédétection],
-  bandeau-couleur: UdesFierteAccessible,
   option-logo: 2,
   logo-bandeau: image("../logoUdes/UdeS_logo_v_blancHR.png", width: 2.8cm),
   logo-cote: image("../logoUdes/UdeS_logo_h_rgbHR.png", width: 30%),

@@ -1,37 +1,34 @@
 #import "../styles.typ": *
 
-= Discussion des résultats <chap:discussion>
+= Discussion <chap:discussion>
 
 Introduction et annonce du plan du chapitre.
 
-== Évaluation de l'atteinte des objectifs de l'essai <sec:atteinte>
+== Titre de niveau 1 <sec:discussion-1>
+Paragraphe
+
+#lorem(90)
+
+=== Titre de niveau 2 <subsec:discussion-11>
 Paragraphe
 #lorem(90)
 
-== Synthèse des résultats <sec:synthese-resultats>
+=== Titre de niveau 2 <subsec:discussion-12>
 Paragraphe
 #lorem(90)
 
-=== Rappel des principaux résultats <subsec:rappel-resultats>
+== Titre de niveau 1 <sec:discussion-2>
 Paragraphe
 #lorem(90)
 
-=== Contribution de l'essai <subsec:contribution>
+== Titre de niveau 1 <sec:discussion-3>
 Paragraphe
 #lorem(90)
 
-== Recommandations <sec:recommandations>
+=== Titre de niveau 2 <subsec:discussion-31>
 Paragraphe
 #lorem(90)
 
-== Limites et perspectives de recherche <sec:limites-perspectives>
-Paragraphe
-#lorem(90)
-
-=== Limites de la recherche <subsec:limites-recherche>
-Paragraphe
-#lorem(90)
-
-=== Perspectives de recherche <subsec:perspectives-recherche>
+=== Titre de niveau 2 <subsec:discussion-32>
 Paragraphe
 #lorem(90)

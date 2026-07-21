@@ -5,7 +5,6 @@
 #page-titre(
   type-doc: [MÉMOIRE DE MAÎTRISE],
   bandeau-sous: [Géomatique appliquée et télédétection],
-  bandeau-couleur: UdesFierteAccessible,
   option-logo: 2,
   logo-bandeau: image("../logoUdes/UdeS_logo_v_blancHR.png", width: 2.8cm),
   logo-cote: image("../logoUdes/UdeS_logo_h_rgbHR.png", width: 30%),

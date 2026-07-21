@@ -2,8 +2,7 @@
 
 Modèle **Typst** pour la rédaction d'un essai de maîtrise au
 Département de géomatique appliquée de l'Université de Sherbrooke. Adapté du
-modèle LaTeX de Philippe Apparicio.
-Conversionr réalisée par Samuel Foucher
+modèle LaTeX de Philippe Apparicio. Conversion réalisée par Samuel Foucher.
 
 > Typst est une alternative moderne à LaTeX : compilation instantanée, syntaxe
 > plus simple. Aucune installation LaTeX n'est requise.
@@ -34,6 +33,28 @@ Conversionr réalisée par Samuel Foucher
 > (`glossarium`, `codly`, `codly-languages`, `lovelace`). Une connexion Internet
 > est nécessaire **une seule fois** ; ensuite, tout fonctionne hors ligne.
 
+**Option C — Avec Visual Studio Code (recommandé pour un usage avancé)**
+
+1.  Installez Typst en ligne de commande (voir Option B) et [Visual
+    Studio Code](https://code.visualstudio.com/).
+2.  Dans VS Code, ouvrez l'onglet *Extensions* (`Ctrl+Shift+X` /
+    `Cmd+Shift+X`) et installez **Tinymist Typst** (extension
+    officielle, maintenue par l'équipe Typst — recherchez « Typst » dans
+    le Marketplace).
+3.  Ouvrez ce dossier du projet typst dans VS Code (*File → Open
+    Folder…*).
+4.  Ouvrez `main.typ`.
+5.  Installer le [plugin Tinymist
+    Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)
+    dans Visual Studio Code.
+6.  Pour obtenir l'aperçu du PDF, menu View / Command Palette / Typst et
+    choisir Typst Preview.
+
+> **Astuce :** l'aperçu en ligne (Option A) reste utile pour partager
+> rapidement le PDF ou travailler depuis un poste sans installation,
+> mais VS Code + Tinymist offre une meilleure expérience pour la
+> rédaction au long cours (fichiers multiples, recherche, Git, etc.).
+
 ---
 
 ## 2. Que faut-il modifier ?
@@ -44,7 +65,7 @@ Conversionr réalisée par Samuel Foucher
 | La **page titre** (bandeau, date, grade) | `fichiers_introductifs/page_titre.typ` |
 | Le **jury** | `fichiers_introductifs/jury.typ` |
 | Le **résumé** / *abstract* | `fichiers_introductifs/resume_abstract.typ` |
-| Les **acronymes** | `auxiliaires/acronymes.typ` |
+| Les **sigles** | `auxiliaires/sigles.typ` |
 | La **bibliographie** | `bibliographie.bib` (format BibTeX standard) |
 | Le **contenu des chapitres** | `chapitres/1_introduction.typ`, etc. |
 
@@ -78,8 +99,8 @@ Conventions d'étiquettes : `chap:`, `sec:`, `subsec:`, `fig:`, `tab:`, `eq:`, `
 #cite(<bonn1992precis>, supplement: [p.~69])  // ajoute la page
 ```
 
-### Acronymes
-Définis dans `auxiliaires/acronymes.typ`, insérés avec `#gls("clé")`. La première
+### Sigles
+Définis dans `auxiliaires/sigles.typ`, insérés avec `#gls("clé")`. La première
 occurrence affiche le nom complet, les suivantes seulement le sigle :
 ```typ
 Le #gls("ndvi") est un indice de végétation.  // 1re fois : « … (NDVI) », ensuite : « NDVI »
@@ -131,12 +152,12 @@ Le `read("...")` doit être écrit dans le **même fichier** que l'appel (chemin
 
 ---
 
-## 4. Structure des fichiers
+## 4. Structure
 
 ```
 main.typ                    Point d'entrée — l'ordre des chapitres est ici
-feuille_style.typ             Feuille de style (à ne pas modifier en principe)
-auxiliaires/acronymes.typ   Liste des acronymes
+feuille_style.typ           Feuille de style (à ne pas modifier en principe)
+auxiliaires/sigles.typ      Liste des sigles et abbrévations
 fichiers_introductifs/      Page titre, jury, résumé, remerciements, etc.
 chapitres/                  Introduction, méthodo, résultats, … , annexes
 figures/                    Images
@@ -145,14 +166,4 @@ Scripts_Programmes/         Codes source affichés en annexe
 bibliographie.bib           Références (BibTeX)
 ```
 
----
-
-## 5. Astuces
-
-- **Erreur de compilation ?** Le message indique le fichier et la ligne. Souvent
-  une accolade `{}` ou un crochet `[]` non fermé.
-- **Une liste optionnelle est vide** (aucun algorithme, aucun script) ? Mettez en
-  commentaire les lignes correspondantes dans `main.typ` (préfixe `//`).
-- **Documentation Typst :** <https://typst.app/docs/>
-
-Bonne rédaction!
+Documentation Typst : <https://typst.app/docs/>. Bonne rédaction !

@@ -1,17 +1,17 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
-= Revue de littérature et cadre théorique <chap:cadretheorique>
+= Cadre théorique <chap:cadre_theoriques>
 
 Introduction et annonce du plan du chapitre.
 
 #lorem(100)
 
-== Section 1 <sec:cadretheorique_1>
+== Section 1 <sec:titre_cth_section1>
 
 Paragraphe.
 #lorem(90)
 
-== Section 2 <sec:cadretheorique_2>
+== Section 2 <sec:titre_cth_section2>
 
 Paragraphe.
 #lorem(90)
@@ -28,6 +28,4 @@ Plusieurs études menées au Canada ont démontré que... #cite(<manaugh2017over
 
 *Connexion avec Zotero*
 
-Si vous utilisez #link("https://www.overleaf.com")[Overleaf], il est possible de le connecter à votre compte #link("https://docs.overleaf.com/integrations-and-add-ons/reference-manager-integrations/zotero")[Zotero].
-
-#lorem(140)
+Si vous utilisez #link("https://typst.app")[Typst], il est possible de le connecter à votre compte #link("https://typst.app/docs/web-app/reference-sync/")[Zotero].

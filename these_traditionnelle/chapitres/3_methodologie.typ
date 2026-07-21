@@ -1,50 +1,48 @@
 #import "../styles.typ": *
 
-= Matériel et méthodes <chap:metho>
+= Méthodologie <chap:metho>
 
-Introduction et annonce du plan du chapitre.
+Paragraphe. #lorem(100)
 
-#lorem(100)
-
-== Territoire d'étude <sec:territoire_etude>
+== Titre de niveau 1 <sec:metho-1>
 
 #lorem(110)
 
 #lorem(90)
 
-== Données <sec:donnees>
+== Titre de niveau 1 <sec:metho-2>
 
-=== Données primaires <subsec:donnees_primaires>
-
-#lorem(90)
-
-=== Données secondaires <subsec:donnees_secondaires>
+=== Titre de niveau 2 <subsec:metho-2-1>
 
 #lorem(90)
 
-== Structuration des données <sec:structuration_donnees>
+=== Titre de niveau 2 <subsec:metho-2-2>
 
 #lorem(90)
 
-== Méthodes d'analyse <sec:methodes_analyses>
-
-=== Méthode 1 <subsec:methodes1>
+== Titre de niveau 1 <sec:metho-3>
 
 #lorem(90)
 
-=== Méthode 2 <subsec:methodes2>
+== Titre de niveau 1 <sec:metho-4>
+
+=== Titre de niveau 2 <subsec:metho-4-1>
 
 #lorem(90)
 
-==== Sous-section <subsubsec:sous_section>
+=== Titre de niveau 2 <subsec:metho-4-2>
+
+#lorem(90)
+
+==== Titre de niveau 3 <subsec:metho-4-2-1>
 
 #lorem(80)
 
-==== Sous-section <subsubsec:sous_section2>
+==== Titre de niveau 3 <subsec:metho-4-2-2>
 
 #lorem(80)
 
-=== Méthode 3 <subsec:methodes3>
+=== Titre de niveau 2 <subsec:metho-4-3>
 
 Comment numéroter et faire référence à une équation ? Les mesures du RMSE et de $R^2$ (équations~@eq:rmse et~@eq:r2) sont utilisées...
 
@@ -65,20 +63,19 @@ L'analyse des résultats du modèle est présentée dans le tableau @tab:tableau
 
 #figure(
   caption: [Premier tableau du chapitre 3],
-  table(
-    columns: (auto, auto, auto, auto),
-    align: (left, center, center, center),
-    inset: (x: 8pt, y: 5pt),
-    table.hline(),
-    [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
-    table.hline(),
-    ..(([Texte],) * 20),
-    table.hline(),
-    table.cell(colspan: 4, align: left, stroke: none,
-      inset: (x: 0pt, top: 4pt))[
-      #text(size: 9pt)[_Note :_ facultatif.]
-    ],
-  ),
+  {
+    table(
+      columns: (auto, auto, auto, auto),
+      align: (left, center, center, center),
+      inset: (x: 8pt, y: 5pt),
+      table.hline(),
+      [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
+      table.hline(),
+      ..(([Texte],) * 20),
+      table.hline(),
+    )
+    align(left, text(size: 9pt)[_Note :_ facultatif.])
+  },
 ) <tab:tableau1>
 
 Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
@@ -87,24 +84,6 @@ Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
   box(width: 100%, align(center, image("../figures/kernels.png", width: 80%))),
   caption: [Fonctions noyaux (kernel) pour définir la matrice de pondération W(i)],
 ) <fig:kernels>
-
-#figure(
-  caption: [Deuxième tableau du chapitre 3],
-  table(
-    columns: (auto, auto, auto, auto),
-    align: (left, center, center, center),
-    inset: (x: 8pt, y: 5pt),
-    table.hline(),
-    [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
-    table.hline(),
-    ..(([Texte],) * 20),
-    table.hline(),
-    table.cell(colspan: 4, align: left, stroke: none,
-      inset: (x: 0pt, top: 4pt))[
-      #text(size: 9pt)[_Note :_ facultatif.]
-    ],
-  ),
-) <tab:tableau2>
 
 #pagebreak()
 
@@ -141,7 +120,7 @@ Voici un exemple, les principaux indices de végétation sont :
 - #gls("ndwi")
 - #gls("msi")
 
-Note : la fonction #raw("gls(...)") gère automatiquement l'affichage du nom complet lors de sa première occurrence, puis de son acronyme seul par la suite.
+Note : la fonction #raw("gls(...)") gère automatiquement l'affichage du nom complet (indice de végétation par différence normalisée) lors de sa première occurrence, puis de son acronyme seul par la suite.
 
 Le plus couramment utilisé et connu est le #gls("ndvi").
 

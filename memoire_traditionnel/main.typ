@@ -101,7 +101,7 @@
 #counter(heading).update(0)
 
 #include "chapitres/1_introduction.typ"
-#include "chapitres/2_cadre_theorique.typ"
+#include "chapitres/2_revue_litterature.typ"
 #include "chapitres/3_methodologie.typ"
 #include "chapitres/4_resultats.typ"
 #include "chapitres/5_discussion.typ"

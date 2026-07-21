@@ -339,7 +339,8 @@
 #let page-titre(
   type-doc: [ESSAI DE MAÎTRISE],
   bandeau-sous: [Géomatique appliquée et télédétection],
-  bandeau-couleur: UdesFierteAccessible,
+  bandeau-couleur-1: UdesFierte,
+  bandeau-couleur-2: UdesFierteAccessible,
   logo-bandeau: none,
   logo-cote: none,
   option-logo: 2,
@@ -354,7 +355,10 @@
   copyright: [© #smallcaps[Prénom] NOM, 20XX],
 ) = page(margin: 0pt, header: none, footer: none, numbering: none, {
   // bandeau vertical à gauche (2,5 cm)
-  place(top + left, rect(width: 2.5cm, height: 100%, fill: bandeau-couleur))
+  place(top + left, rect(
+    width: 2.5cm, 
+    height: 100%,
+    fill: if option-logo == 1 { bandeau-couleur-1} else { bandeau-couleur-2}))
   // logo dans le bandeau (option 2)
   if option-logo == 2 and logo-bandeau != none {
     place(top + left, dy: 0.7cm, box(width: 2.5cm, align(center, logo-bandeau)))

@@ -17,7 +17,6 @@ Paragraphe.
 
 Les statistiques... (tableau @tab:cellules_fusionnees).
 
-Variable de contrôle
 #figure(
   caption: [Tableau avec des cellules fusionnées],
   table(

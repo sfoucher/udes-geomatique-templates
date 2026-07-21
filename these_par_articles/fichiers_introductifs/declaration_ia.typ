@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 #chapitre-nn[Déclaration de l'utilisation de l'intelligence artificielle générative]
 

@@ -1,50 +1,50 @@
 #import "../styles.typ": *
 
-= Matériel et méthodes <chap:metho>
+= Méthodologie <chap:metho>
 
 Introduction et annonce du plan du chapitre.
 
 #lorem(100)
 
-== Territoire d'étude <sec:territoire_etude>
+== Titre de niveau 1 <sec:metho-1>
 
-#lorem(110)
+#lorem(100)
 
-#lorem(90)
+#lorem(50)
 
-== Données <sec:donnees>
+== Titre de niveau 1 <sec:metho-2>
 
-=== Données primaires <subsec:donnees_primaires>
+=== Titre de niveau 1 <sec:metho-21>
 
-#lorem(90)
+#lorem(100)
 
-=== Données secondaires <subsec:donnees_secondaires>
+=== Titre de niveau 1 <sec:metho-22>
 
-#lorem(90)
+#lorem(100)
 
-== Structuration des données <sec:structuration_donnees>
+== Titre de niveau 1 <sec:metho-3>
 
-#lorem(90)
+#lorem(100)
 
-== Méthodes d'analyse <sec:methodes_analyses>
+== Titre de niveau 1 <sec:metho-4>
 
-=== Méthode 1 <subsec:methodes1>
+=== Titre de niveau 2 <subsec:metho-41>
 
-#lorem(90)
+#lorem(100)
 
-=== Méthode 2 <subsec:methodes2>
+=== Titre de niveau 2 <subsec:metho-42>
 
-#lorem(90)
+#lorem(100)
 
-==== Sous-section <subsubsec:sous_section>
+==== Titre de niveau 3 <subsubsec:metho-421>
 
-#lorem(80)
+#lorem(100)
 
-==== Sous-section <subsubsec:sous_section2>
+==== Titre de niveau 3 <subsubsec:metho-422>
 
-#lorem(80)
+#lorem(100)
 
-=== Méthode 3 <subsec:methodes3>
+=== Titre de niveau 2 <subsec:metho-43>
 
 Comment numéroter et faire référence à une équation ? Les mesures du RMSE et de $R^2$ (équations~@eq:rmse et~@eq:r2) sont utilisées...
 
@@ -88,24 +88,6 @@ Différentes fonctions Kernel peuvent être utilisées (figure @fig:kernels).
   caption: [Fonctions noyaux (kernel) pour définir la matrice de pondération W(i)],
 ) <fig:kernels>
 
-#figure(
-  caption: [Deuxième tableau du chapitre 3],
-  table(
-    columns: (auto, auto, auto, auto),
-    align: (left, center, center, center),
-    inset: (x: 8pt, y: 5pt),
-    table.hline(),
-    [*Colonne A*], [*Colonne B*], [*Colonne C*], [*Colonne D*],
-    table.hline(),
-    ..(([Texte],) * 20),
-    table.hline(),
-    table.cell(colspan: 4, align: left, stroke: none,
-      inset: (x: 0pt, top: 4pt))[
-      #text(size: 9pt)[_Note :_ facultatif.]
-    ],
-  ),
-) <tab:tableau2>
-
 #pagebreak()
 
 En théorie des graphes, l'algorithme de Dijkstra résout le problème du plus court chemin (algorithme @algo:dijkstra).
@@ -127,6 +109,41 @@ En théorie des graphes, l'algorithme de Dijkstra résout le problème du plus c
         + $"prec"[v] <- u$
   + *retourner* $d$ et $"prec"$
 ]) <algo:dijkstra>
+
+
+Les statistiques... (tableau @tab:cellules_fusionnees).
+
+#figure(
+  caption: [Tableau avec des cellules fusionnées],
+  table(
+    columns: 3,
+    align: left,
+    inset: (x: 8pt, y: 5pt),
+    table.hline(),
+    [*Type de variable*], [*Nom*], [*Abréviation*],
+    table.hline(),
+    [Dépendante], [Dioxyde d'azote (µg/m#super[3])], [NO#sub[2]],
+    table.hline(),
+    [Variable de contrôle], [Température (°C)], [Temp],
+    [], [Humidité (%)], [Humid],
+    [], [Vitesse du vent (km/h)], [Vitesse],
+    table.hline(),
+    [Variable explicative], [Nombre d'intersections (N)], [Inters],
+    [], [Localisation géographique], [XY],
+    [], [Vitesse (km/h)], [Vitesse],
+    table.hline(),
+  ),
+) <tab:cellules_fusionnees>
+#lorem(60) (figure @fig:plusieurs_vignettes).
+
+#figure(
+  image("../figures/figureavecplusieursvignettes.png", width: 80%),
+  caption: flex-caption(
+    [Figure avec plusieurs vignettes. *(a)* Description. *(b)* Description. *(c)* Description. (d) Description. Figure adaptée de #cite(<apparicio2021cycling>, form: "prose", supplement: [p.~2]).],
+    [Figure avec plusieurs vignettes],
+  ),
+) <fig:plusieurs_vignettes>
+
 
 Pour intégrer des acronymes dans le texte, utiliser la fonction #raw("gls(\"nom-acronyme\")"). Les acronymes doivent être préalablement définis dans le fichier `auxiliaires/acronymes.typ`. Un hyperlien sur l'acronyme renvoie automatiquement à la liste des acronymes.
 

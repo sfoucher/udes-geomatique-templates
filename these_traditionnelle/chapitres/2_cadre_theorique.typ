@@ -30,6 +30,3 @@ Plusieurs études menées au Canada ont démontré que... #cite(<manaugh2017over
 
 Si vous utilisez #link("https://typst.app")[Typst], il est possible de le connecter à votre compte #link("https://typst.app/docs/web-app/reference-sync/")[Zotero].
 
-== Section 3 <sec:titre_cth_section3>
-
-#lorem(140)

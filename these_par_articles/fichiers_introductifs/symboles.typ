@@ -1,4 +1,4 @@
-#import "../../udes-thesis.typ": *
+#import "../styles.typ": *
 
 // --- Liste des symboles ---
 #chapitre-nn[Liste des symboles]

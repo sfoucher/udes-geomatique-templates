@@ -1,7 +1,8 @@
 # Latex-Typst — UdeS géomatique thesis templates
 
-Two thesis templates (LaTeX + Typst): `essai/` (mémoire) and `these_par_articles/` (thèse par articles).
-Shared Typst model `udes-thesis.typ` at repo root, imported via `../udes-thesis.typ`.
+Five Typst template variants, all **self-contained** (own `styles.typ` + `auxiliaires/sigles.typ`):
+`memoire_traditionnel/`, `memoire_par_article/`, `these_traditionnelle/`, `essai/`, `these_par_articles/`.
+Root `udes-thesis.typ` is legacy/unused — no template imports it anymore.
 
 ## Environment
 - Bash tool has NO coreutils AND no `git`/`gh` — all fail `command not found` (exit 127). Use Glob/Grep/Read tools or PowerShell.
@@ -11,10 +12,10 @@ Shared Typst model `udes-thesis.typ` at repo root, imported via `../udes-thesis.
 - Typst 0.15.0 on PATH as `typst`.
 
 ## Compile Typst
-- `cd essai && typst compile --root .. main.typ main.pdf` — `--root ..` required (mains import `../udes-thesis.typ`). Same for `these_par_articles/`.
+- `cd <dir> && typst compile main.typ` (no `--root` needed — all templates self-contained).
 - First compile downloads `@preview` packages (glossarium, codly, codly-languages, lovelace) — needs internet once.
 
 ## Distribution
 - Public repo: `sfoucher/udes-geomatique-templates`.
 - Zips are build artifacts (gitignored, NOT tracked) — published as GitHub Release assets. Rebuild from templates before uploading; refresh `gh release upload <tag> <zip> --clobber`.
-- Zip layout: top folder with `udes-thesis.typ` + template dir (Typst-only, French README, reference PDF).
+- Zip layout: top folder with the template dir only (self-contained, Typst-only, French README, reference PDF).

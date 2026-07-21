@@ -3,7 +3,17 @@
     "allow": [
       "Read(//c/Users/fous3401/AppData/Local/typst/packages/preview/glossarium/0.5.6/**)",
       "Read(//c/Users/fous3401/AppData/Local/typst/packages/preview/lovelace/0.3.0/**)",
-      "Read(//c/Users/fous3401/AppData/Local/typst/packages/preview/codly/1.3.0/**)"
+      "Read(//c/Users/fous3401/AppData/Local/typst/packages/preview/codly/1.3.0/**)",
+      "Bash(/c/DEV/Miniconda3/envs/claude/python.exe build_docx.py modele_memoire_traditionnel.docx)",
+      "Bash(pandoc -t markdown modele_memoire_traditionnel.docx)",
+      "Bash(grep -E '^#{1,3} ')",
+      "Bash(/c/DEV/Miniconda3/envs/claude/python.exe *)",
+      "Bash(npm root *)",
+      "Bash([ -e \"$NR/@anthropic-ai/claude-code\" ])",
+      "Bash([ -d \"$BAK\" ])",
+      "Bash(rm -rf C:/Users/fous3401/.claude/skills/rlm-research-analyzer.bak)",
+      "Bash(claude update *)",
+      "Bash(claude --version)"
     ]
   }
 }

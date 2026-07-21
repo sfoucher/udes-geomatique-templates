@@ -2,8 +2,8 @@
 // Thèse par articles — Université de Sherbrooke, télédétection
 // Fichier principal. Compilation :  typst compile main.typ
 // =============================================================================
-#import "../udes-thesis.typ": *
-#import "auxiliaires/acronymes.typ": acronymes
+#import "styles.typ": *
+#import "auxiliaires/sigles.typ": acronymes
 
 #show: thesis.with(
   titre: "Titre de la thèse",
